@@ -19,8 +19,7 @@ namespace day1
                 g = (g + (n / g)) / 2;
 
             }
-            sqrt = g;
-            
+            sqrt = g;            
             Console.WriteLine("The square root of {0} is {1}", n, sqrt);
         }
     }

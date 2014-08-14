@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>day1.Ex22</StartupObject>
+    <StartupObject>day1.Ex19</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ISS.RV.LIB">
@@ -57,7 +57,12 @@
     <Compile Include="Ex18.cs" />
     <Compile Include="Ex19.cs" />
     <Compile Include="Ex21.cs" />
+    <Compile Include="Ex23.cs" />
+    <Compile Include="Ex23a.cs" />
+    <Compile Include="Ex24.cs" />
     <Compile Include="Exercise1.cs" />
+    <Compile Include="Factorial.cs" />
+    <Compile Include="FactorialDec.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
