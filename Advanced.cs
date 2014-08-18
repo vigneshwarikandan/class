@@ -42,8 +42,7 @@ namespace algebra
         static void Main(string[] args)
         {
             Console.WriteLine("Enter the value of x");
-            double x = ISSConsole.ReadDouble();
-            //double x2 = Math.Pow(x,2);            
+            double x = ISSConsole.ReadDouble();   
             double y = 5 * Math.Pow(x,2) - 4 * x + 3;
             Console.WriteLine("The value of y is " + y);
         }

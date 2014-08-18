@@ -5,7 +5,7 @@ using System.Text;
 
 namespace day1
 {
-    class Ex40
+    class Ex43
     {
         static void convertSingle(int decNum)
         {
@@ -14,12 +14,10 @@ namespace day1
             string original_hexdec = "";
             int q = number;
             int r = 0;
-            while (q >16)
+            while (q >0)
             {                
                 r = q % 16;
-                Console.WriteLine("rem={0}",r);
                 q = q / 16;
-                Console.WriteLine("q={0}", q);
                 if (r > 9)
                 {
                     switch (r)
@@ -48,12 +46,7 @@ namespace day1
                 else
                 {
                     hexdec = hexdec + r;
-                }
-                if (q < 16)
-                {
-                    hexdec = hexdec + q;
-                }
-                
+                }               
             }
             
             for (int i = hexdec.Length-1; i >= 0; i--)
@@ -65,7 +58,7 @@ namespace day1
         }
         static void Main(string[] args)
         {
-            convertSingle(317547);
+           // convertSingle(317547);
             convertDecToHex();
         }
 
@@ -77,7 +70,8 @@ namespace day1
                 string original_hexdec = "";
                 int q = i;
                 int r = 0;
-                while (q > 16)
+                
+                while (q > 0)
                 {
                     r = q % 16;                    
                     q = q / 16;                   
@@ -110,10 +104,7 @@ namespace day1
                     {
                         hexdec = hexdec + r;
                     }
-                    if (q < 16)
-                    {
-                        hexdec = hexdec + q;
-                    }
+                   
 
                 }
 

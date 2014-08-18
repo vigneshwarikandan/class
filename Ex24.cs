@@ -11,6 +11,8 @@ namespace day1
         {
             int n = 0;
             Console.WriteLine("Enter a number to find square root");
+            //Random r = new Random();
+            //Console.Write("Random"+r.Next(9));
             n = ISSConsole.ReadInt();
             int g = ISSMath.RNDInt(n);
             int sqrt;
