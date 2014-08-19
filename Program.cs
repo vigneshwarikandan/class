@@ -12,7 +12,7 @@ namespace day1
             System.Console.WriteLine("hI");
            // System.Console.ReadLine();
             double x = 3.16;
-            System.Console.WriteLine("{0:00.#}", x);
+            System.Console.WriteLine("{0:0.#}", x);
             System.Console.ReadLine();
         }
     }
