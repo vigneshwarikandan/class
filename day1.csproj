@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>day1.Ex19</StartupObject>
+    <StartupObject>day1.Dice</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ISS.RV.LIB">
@@ -51,6 +51,20 @@
   <ItemGroup>
     <Compile Include="Advanced.cs" />
     <Compile Include="armstrong.cs" />
+    <Compile Include="Bank.cs" />
+    <Compile Include="BankAccount1.cs" />
+    <Compile Include="BankAccount3.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Dice.cs" />
+    <Compile Include="Ex32.cs" />
+    <Compile Include="Ex34.cs" />
+    <Compile Include="Ex37.cs" />
+    <Compile Include="Ex38.cs" />
+    <Compile Include="Ex40Sqrt.cs" />
+    <Compile Include="Ex42.cs" />
+    <Compile Include="Ex43.cs" />
+    <Compile Include="Ex20.cs" />
+    <Compile Include="Ex26.cs" />
     <Compile Include="Ex22.cs" />
     <Compile Include="Ex16.cs" />
     <Compile Include="Ex17.cs" />
@@ -60,11 +74,20 @@
     <Compile Include="Ex23.cs" />
     <Compile Include="Ex23a.cs" />
     <Compile Include="Ex24.cs" />
+    <Compile Include="Ex27.cs" />
+    <Compile Include="Ex28.cs" />
+    <Compile Include="Ex29.cs" />
+    <Compile Include="ex30.cs" />
+    <Compile Include="Ex44.cs" />
+    <Compile Include="Ex45.cs" />
     <Compile Include="Exercise1.cs" />
     <Compile Include="Factorial.cs" />
     <Compile Include="FactorialDec.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rectangle.cs" />
+    <Compile Include="TicTacToe.cs" />
+    <Compile Include="Triangle.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

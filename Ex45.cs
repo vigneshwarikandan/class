@@ -10,7 +10,7 @@ namespace day1
         static void Main(string[] args)
         {
             double number = 0.25;
-            double numberOfCents=0.0
+            double numberOfCents = 0.0; 
             number =number* Math.Pow(10, 2);
             Console.WriteLine(number);
             int r = (int)number % 100;
