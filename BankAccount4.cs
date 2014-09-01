@@ -5,17 +5,18 @@ using System.Text;
 
 namespace day1
 {
-   public class BankAccount3
+    public class BankAccount4
     {
         string accountNumber = "";
         Customer accountHolder;
         protected double balance = 0.0;
 
-        public BankAccount3() :this("",  new Customer(),100.0)
+        public BankAccount4()
+            : this("", new Customer(), 100.0)
         {
         }
 
-        public BankAccount3(string accountNumber, Customer customerName, double amount) 
+        public BankAccount4(string accountNumber, Customer customerName, double amount)
         {
             this.accountNumber = accountNumber;
             this.accountHolder = customerName;
@@ -97,7 +98,7 @@ namespace day1
             balance = balance + amount;
         }
 
-        void TransferTo(BankAccount3 bankAccountNumber, double amount)
+        void TransferTo(BankAccount4 bankAccountNumber, double amount)
         {
             if (WithDraw(amount))
             {
@@ -116,26 +117,26 @@ namespace day1
         static void Main(string[] args)
         {
             Customer customer1 = new Customer("samyu", "addr1", "1234566");
-            BankAccount3 account1 = new BankAccount3("100001", customer1, 2000);
-            
+            BankAccount4 account1 = new BankAccount4("100001", customer1, 2000);
+
             account1.Deposit(2000);
-           
+
             account1.WithDraw(2000);
-           
+
             System.Console.WriteLine("The account1 customer is " + account1.Show());
             Customer customer2 = new Customer("adi", "addr2", "1234566");
-            BankAccount3 account2 = new BankAccount3("100002", customer2, 3000);
+            BankAccount4 account2 = new BankAccount4("100002", customer2, 3000);
             account2.TransferTo(account1, 3000);
             System.Console.WriteLine("The account2 customer is " + account2.Show());
-            
+
             account1.CreditInterest(account1.CalculateInterest(account1.Balance));
             System.Console.WriteLine("The account1 customer in savings accountis " + account1.Show());
 
-            CurrentAccount currentAccount = new CurrentAccount("100001", customer1, 2000);
+            CurrentAccounts currentAccount = new CurrentAccounts("100001", customer1, 2000);
             currentAccount.CreditInterest(currentAccount.CalculateInterest(currentAccount.Balance));
             System.Console.WriteLine("The account1 customer is " + currentAccount.Show());
 
-            OverDraft overDraft = new OverDraft("100001", customer1, 2000);
+            OverDrafts overDraft = new OverDrafts("100001", customer1, 2000);
             overDraft.WithDraw(2000);
             overDraft.WithDraw(2000);
             overDraft.WithDraw(2000);
@@ -145,30 +146,30 @@ namespace day1
         }
     }
 
-    
 
-    class CurrentAccount : BankAccount3
+
+    class CurrentAccounts : BankAccount4
     {
-        public CurrentAccount(string accountNumber, Customer customerName, double amount)
+        public CurrentAccounts(string accountNumber, Customer customerName, double amount)
             : base("100001", new Customer(), 2000)
         {
 
         }
         public new double CalculateInterest(double balance_Amount)
         {
-            Console.WriteLine("Inside credit interest "+balance_Amount);
+            Console.WriteLine("Inside credit interest " + balance_Amount);
             return (0.25 * balance_Amount) / 100;
         }
 
-       
+
     }
 
-    class OverDraft : BankAccount3
+    class OverDrafts : BankAccount4
     {
         static double interest_rate = 0.25;
         static int overDraft_interest = 6;
 
-        public OverDraft(string accountNumber, Customer customerName, double amount)
+        public OverDrafts(string accountNumber, Customer customerName, double amount)
             : base(accountNumber, new Customer(), 2000)
         {
 
@@ -192,9 +193,9 @@ namespace day1
         public new void WithDraw(double amount)
         {
             Console.WriteLine("Inside overdraft");
-                balance = balance - amount;            
+            balance = balance - amount;
         }
     }
 
-    
+
 }
