@@ -89,6 +89,7 @@ namespace day1
 
         private void Reduce()
         {
+
             if (numerator != 0)
             {
                 int common = HCF(Math.Abs(numerator), denominator);
