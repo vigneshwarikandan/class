@@ -9,6 +9,11 @@ namespace day1
     {
         protected int x;
         protected int y;
+        public Shape(int x,int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
         public abstract void draw();
         public virtual void plotPoints()
         {
@@ -18,10 +23,8 @@ namespace day1
 
     class Triangles : Shape
     {
-        public Triangles(int x,int y)
+        public Triangles(int x,int y):base(x,y)
         {
-            this.x = x;
-            this.y = y;
         }
 
         public override void draw()
@@ -37,10 +40,8 @@ namespace day1
 
      class Rectangles : Shape
      {
-         public Rectangles(int x, int y)
+         public Rectangles(int x, int y):base(x,y)
          {
-             this.x = x;
-             this.y = y;
          }
 
         public override void draw()
@@ -69,6 +70,11 @@ namespace day1
             {
                 s.draw();
             }
+            for (int i = 0; i < shapes.Count; i++)
+            {
+                Shape obj = (Shape) shapes[i];
+                obj.draw();
+            }
         }
 
         public void PlotPoints()
@@ -90,6 +96,9 @@ namespace day1
             Drawing d = new Drawing();
             d.addShapes(new Triangles(2,3));
             d.addShapes(new Rectangles(3,3));
+            d.addShapes(new Triangles(4, 13));
+            d.addShapes(new Triangles(5, 6));
+            d.addShapes(new Rectangles(7, 9));
             d.Draw();
             d.PlotPoints();
         }

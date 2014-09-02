@@ -35,10 +35,10 @@ namespace day1
                 return false;
             }
         }
-        public double CalculateInterest(double balance_Amount)
+        public double CalculateInterest()
         {
-            Console.WriteLine("The  balance from calculate interest=" + balance_Amount);
-            return (1 * balance_Amount) / 100;
+            Console.WriteLine("The  balance from calculate interest=" + getBalance());
+            return (1 * getBalance()) / 100;
         }
 
         public void CreditInterest(double balance_Amount)
@@ -128,7 +128,7 @@ namespace day1
             account2.TransferTo(account1, 3000);
             System.Console.WriteLine("The account2 customer is " + account2.Show());
             
-            account1.CreditInterest(account1.CalculateInterest(account1.Balance));
+            account1.CreditInterest(account1.CalculateInterest());
             System.Console.WriteLine("The account1 customer in savings accountis " + account1.Show());
 
             CurrentAccount currentAccount = new CurrentAccount("100001", customer1, 2000);
@@ -140,7 +140,7 @@ namespace day1
             overDraft.WithDraw(2000);
             overDraft.WithDraw(2000);
             overDraft.WithDraw(2000);
-            overDraft.CreditInterest(overDraft.CalculateInterest(overDraft.getBalance()));
+            overDraft.CreditInterest(overDraft.CalculateInterest());
             System.Console.WriteLine("The account1 customer is " + overDraft.Show());
         }
     }

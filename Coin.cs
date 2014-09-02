@@ -7,33 +7,54 @@ namespace day1
 {
     class Coin:IInvestment
     {
-
+        string dateAcquired_var;
+        double profits_var;
+        double estimatedValue_var;
+        double cost_var;
+        public Coin(string dateAcquired,double profits,double estimatedValue,double cost)
+        {
+            this.dateAcquired_var = dateAcquired;
+            this.profits_var = profits;
+            this.estimatedValue_var = estimatedValue;
+            this.cost_var = cost;
+        }
         public string dateAcquired()
-        {            
-            return "2014-01-12";
+        {
+            return dateAcquired_var;
         }
         public double profits()
         {
-            return 0;
+            return estimatedValue()-cost();
         }
         public double estimatedValue()
         {
-            return 12;
+            return estimatedValue_var;
         }
         public double cost()
         {
-            return 10;
+            return cost_var;
         }
     }
     public class Gold:IInvestment
     {
+        string dateAcquired_var;
+        double profits_var;
+        double estimatedValue_var;
+        double cost_var;
+        public Gold(string dateAcquired, double profits, double estimatedValue, double cost)
+        {
+            this.dateAcquired_var = dateAcquired;
+            this.profits_var = profits;
+            this.estimatedValue_var = estimatedValue;
+            this.cost_var = cost;
+        }
         public string dateAcquired()
         {
-            return "2015-01-12";
+            return dateAcquired_var;
         }
         public double profits()
         {
-            return 0;
+            return estimatedValue()-cost();
         }
         public double estimatedValue()
         {
@@ -46,13 +67,24 @@ namespace day1
     }
     public class Antique:IInvestment
     {
+        string dateAcquired_var;
+        double profits_var;
+        double estimatedValue_var;
+        double cost_var;
+        public Antique(string dateAcquired, double profits, double estimatedValue, double cost)
+        {
+            this.dateAcquired_var = dateAcquired;
+            this.profits_var = profits;
+            this.estimatedValue_var = estimatedValue;
+            this.cost_var = cost;
+        }
         public string dateAcquired()
         {
-            return "2016-01-12";
+            return dateAcquired_var;
         }
         public double profits()
         {
-            return 0;
+            return estimatedValue()-cost();
         }
         public double estimatedValue()
         {
@@ -77,12 +109,12 @@ namespace day1
         static void Main(string[] args){
             //Investments investment = new Investments();
             //investment.addInvestments(new Coin());
-            IInvestment[] iinvestment = new IInvestment[] {new Coin(),new Gold(),new Antique() };
+            IInvestment[] iinvestment = new IInvestment[] {new Coin("2014-02-01",0,12,10),new Gold("2015-02-01",0,22,20),new Antique("2015-02-01",0,32,30) };
             foreach (IInvestment invest in iinvestment)
             {
                 System.Console.WriteLine("The investment is {0}", invest);
                 System.Console.WriteLine("Total value={0}",invest.estimatedValue());
-                System.Console.WriteLine("profits={0}", invest.estimatedValue()-invest.cost());
+                System.Console.WriteLine("profits={0}", invest.profits());
 
             }
         }
